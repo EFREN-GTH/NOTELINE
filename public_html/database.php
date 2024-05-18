@@ -10,7 +10,7 @@ try{
 	$conn=new PDO("mysql:host=$server;port=$port;dbname=$database", $user, $password);
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }catch(PDOException $error){
-	echo 'PDOException: ',  $error->getMessage(), "\n";
+	echo 'PDOException: ',  $error->getMessage(), "\n", " -> (F5)";
 }
 
 function getUserData($conn) {
