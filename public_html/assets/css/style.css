@@ -1,0 +1,313 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    font-size: 16px;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(241, 241, 241);
+}
+header{
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+
+    background: white;
+    border-radius: 40px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.137);
+    
+    width: 90%;
+    height:4rem;
+    padding: 2rem;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .2rem;
+} 
+    .logo h1{
+        font-family: 'Readex Pro', sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+    }
+header a{
+    text-decoration: none;
+    color: black;
+}
+.app-bg{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    background-image: radial-gradient(circle, #FFFF66, #FFD700, #FFD700, #ffc400, #ffae00);
+}
+.card{
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+    
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.363);
+    border-radius: 30px 30px 30px 30px;
+
+    width: 350px;
+    height: auto;  
+    padding: 2rem;
+    gap: 1rem;
+}
+    .title-wrapper{
+        font-weight: 800;
+        font-size: 1.4rem;
+    }
+    .card p{
+        font-size: .8rem;
+        font-weight: 400;
+        color: gray;
+    }
+    .card .warning{
+        color: red;
+    }
+    .card .warning2{
+        color: #ffae00;
+    }
+    
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 100%;
+}
+.form-field{
+    position: relative;
+    margin: 1rem 0;
+    gap: 1rem;
+}
+    .login-field{
+        position: relative;
+        width: 100%;
+        height: 3.5rem;
+
+        background: transparent;
+        
+        padding: 20px 10px 10px;
+        border: none;
+        outline: none;
+        
+    }
+    .form-field span{
+        opacity: 50%;
+        position: absolute;
+        left: 0;
+        padding: 25px 10px 5px;
+        pointer-events: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: 0.5s;
+        letter-spacing: 0;
+    }
+    .form-field input:not(:placeholder-shown) ~ span,
+    .form-field input:focus ~ span{
+        transform: translateX(0px) translateY(-35px);
+        font-weight: 600;
+        font-size: .9rem;
+        opacity: 100%;
+    }   
+    .form-field i{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        border: 1px solid rgb(255, 217, 0);
+        border-radius: 4px 4px 0px 4px;
+        transition: 0.5s;
+        pointer-events: none;
+        
+    }
+    .form-field input:not(:placeholder-shown) ~ i,
+    .form-field input:focus ~ i{
+        height: 44px;
+        border: 2px solid rgb(255, 217, 0);
+        background-color: rgba(255, 255, 255, 0.164);
+    }
+.login-btn{
+    border: none;
+    outline: none;
+
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+
+    background-image: radial-gradient(circle, rgb(255, 217, 0), rgb(255, 208, 0), rgb(255, 196, 0));
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 1px 5px rgba(255, 174, 0, 0.301);
+ 
+ 
+    height: 3rem;
+    width: auto;
+    padding: .8rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+.login-btn:hover,
+.login-btn:active
+{
+    background-image: radial-gradient(circle, rgb(255, 230, 0), rgb(255, 221, 0), rgb(255, 210, 0));
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(12, 12, 12);
+    color: white;
+    font-weight: 300;
+    height: 5vh;
+    width: 100%;
+    
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+/*WEB-APP STYLES*/
+.container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: calc(5rem + 10px);
+    margin: 0 .5rem;
+    gap: 1rem;
+}
+.greeting{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+}
+    .greeting span{
+        font-size: 1.5rem;
+        max-width: 60%;
+        overflow-wrap: break-word;
+
+    }
+    .greeting a{
+        text-decoration: none;
+        color: black;
+        font-size: .9rem;
+        font-weight: bold;
+        bottom: 0;
+        background-color: #ffae00;
+        padding: .5rem;
+        border-radius: 20px;
+    }
+    .greeting a:hover{
+        background-color: #ffc400;
+    }
+    .addNote{
+         display: flex;
+         flex-direction: column;
+         align-self: center;
+         width: 100%;
+         gap: .5rem;
+    }
+    .addNote label{
+        font-size: 1rem;
+        font-weight: 400;
+    }
+        .noteFields{
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            border: 2px solid rgba(0, 0, 0, 0.063);    
+        }
+            .noteFields #title{
+                padding: .5rem;
+
+                border-radius: 10px 10px 0 0;
+
+                outline: none;
+                border: none;
+            }
+            .noteFields #content{
+                outline: none;
+                border: none;
+
+                border-radius: 0 0 10px 10px;
+
+                padding: .5rem;
+                height: 100px;
+                transition-duration: .5s;
+            }
+        .addNote .save-btn{
+            outline: none;
+            border: 2px solid rgba(0, 0, 0, 0.104);
+
+            background-color: white;
+            border-radius: 15px;
+
+
+            align-self: flex-end;
+            padding: .3rem .5rem;
+            width: auto;
+        }
+.notas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+    .nota{
+        position: relative;
+        background-color: rgb(246, 246, 246);
+        border: 2px solid rgba(0, 0, 0, 0.063);    
+        border-radius: 10px;
+        
+        padding: .5rem;
+        width: 100%;
+    }
+        .nota h3{
+            font-size: 1rem;
+            padding-right: 80px;
+        }
+        .nota p{
+            font-size: .8rem;
+            padding-right: 80px;
+        }
+        .nota #date{
+            position: absolute;
+            top: .5rem;
+            right: .5rem;
+            color: gray;
+            font-size: .8rem;
+        }
+        .nota input{
+            position: absolute;
+            bottom: .5rem;
+            right: .5rem;
+            color: gray;
+            font-size: .7rem;
+
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+
