@@ -22,7 +22,7 @@
 </head>
 <body>
     <?php 
-        require_once "partials/header.php"; 
+        //require_once "partials/header.php"; 
         if (isset($_SESSION['user_data']) && !empty($user)){
             require_once "app.php";
         } else {
