@@ -60,7 +60,7 @@
             <div class="nota">
                 <h3><?= $note['title'] ?></h3>
                 <p><?= $note['content'] ?></p>
-                <label id="date"><?= $note['created_date'] ?></label>
+                <label id="date" class="data-label" data-utc="<?= $note['created_date'] ?>"></label>
                 <input type="button" value="Eliminar nota" onclick="deleteNote(<?= $note['id'] ?>)">
             </div>
         </div>
@@ -69,6 +69,17 @@
     <?php endif; ?>
 </div>
 <script>
+    window.onload = function() {
+        const dateLabels = document.querySelectorAll('.data-label');
+        dateLabels.forEach(function(label) {
+            const utcDateString = label.getAttribute('data-utc');
+            label.textContent = utcStringToLocale(utcDateString);
+        });
+    };
+    function utcStringToLocale(utcDateString) {
+        return new Date(utcDateString.replace(' ', 'T') + 'Z').toLocaleString();
+    }
+    
     async function deleteNote(noteId) {
         try {
             const response = await fetch(`database.php?note_id=${noteId}`, {
