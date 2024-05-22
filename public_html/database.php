@@ -1,9 +1,9 @@
 <?php
 
-$server="db";
-$user="root";
-$password="test";
-$database="notas_db";
+$server = "mysql";
+$user = $_ENV['MYSQL_USER'];
+$password = $_ENV['MYSQL_PASSWORD'];
+$database = $_ENV['MYSQL_DATABASE'];
 $port="3306";
 
 try{
